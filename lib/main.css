@@ -1,0 +1,67 @@
+/* common definition */
+* { box-sizing: border-box; }
+html { overflow-x: hidden; }
+body { font-family: Verdana, Arial, SimSun, "Microsoft YaHei", sans-serif; line-height: 1.5; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem;  color: #33c; }
+h5 { font-size: 1rem; }
+h1, h2, h3, h4, h5 { margin: 0.5em 0; }
+h1, h2, h3, h4 { font-family: "Microsoft YaHei"; font-weight: normal; }
+h1 a, h2 a, h3 a, h4 a, h5 a { font-weight: inherit; }
+hr { height: 0; border: 0; border-top: 1px solid #ccc; margin: 6px 0; }
+img { margin-bottom: -5px; max-width: 100%; }
+a { color: inherit; }
+table { width: 100%; }
+table, th, td { border: none; }
+.responsive { overflow-x: auto; }
+
+/* definition of the main parts */
+main { width: 100%; position: relative; text-align: left; border: 0; }
+@media (min-width: 993px) {
+  main { max-width: 980px; margin: auto; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important; }
+}
+main h1 { border-bottom: 2px solid #999; text-align: center; }
+main h2 { border-bottom: 1px solid #ccc; }
+main h2.collapse::after { content: "#点击展开#"; font-size: 1rem; position: absolute; right: 1rem; }
+main p { margin: 0.25em 0; }
+main p a { text-decoration: none; border-bottom: 1px solid gray; }
+main ul, main ol { margin: 0.25em 0 0 2em; padding: 0; }
+main blockquote { margin: 0.25em 0; padding: 0.25em 0.25em 0.25em 1em; border-left: 4px solid gray; }
+pre, code { font-family: Consolas, "Courier New", Courier, monospace; }
+pre { margin: 0.25em 0; padding: 0.25em 0.75em; border: 1px dotted #999; white-space: pre-wrap; }
+code { padding: 1px 0.25em; background-color: #eee; }
+main table { margin: 0.25em 0 0; border: 1px solid #999; empty-cells: show; }
+main table th { padding: 0.15em 0.5em; text-align: center; color: #fff; background-color: #666; }
+main table td { padding: 0.15em 0.5em; border-top: 1px solid #ccc; }
+main table td:first-child a { text-decoration: none; color: #f33; }
+#md {padding: 0.5em 1em;}
+#md pre{ padding: 0; }
+
+/* definition of the sidemenu */
+#sidemenu { position: fixed; left: -230px; width: 230px; height: 100%; z-index: 99; background-color: #eee;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important; }
+#sidemenu.show { left: 0; }
+#sidemenu h2, #sidemenu h3 { font-family: "Microsoft YaHei", sans-serif; }
+#sidemenu h2 { font-size: 1.25rem; text-align: center; background-color: #ccc; margin: 2px 6px; }
+#sidemenu h2::before { content: "-"; color: #fff; font-weight: bold; position: absolute; left: 12px; }
+#sidemenu h2.collapse::before { content: "+"; }
+#sidemenu h3 { font-size: 1.125rem; padding-left: 0.5em; color: #000; margin: 2px 0; }
+#sidemenu a { font-size: 1rem; padding: 0 1em; color: #555; text-decoration: none; display: block; }
+#sidemenu a:hover { background-color: #ccc; }
+#togglemenu { position: absolute; top:1.5em; left:100%; padding: 0.25em; border: 1px solid #ccc;
+  border-radius: 0 0.25em 0.25em 0; color: #999; line-height: 1.25em; }
+#togglemenu:hover { background-color: #eee; color: #666; }
+#sidemenu h2, #togglemenu:hover { cursor: pointer; }
+#sidemenu #togglemenu span:last-child { display: none; }
+#sidemenu.show #togglemenu span { display: none; }
+#sidemenu.show #togglemenu span:last-child { display: initial; }
+
+/* special definition for widescreen */
+@media (min-width: 1210px) {
+  body { width: 1210px; position: relative; margin: auto; }
+  main { position: relative; left: 115px; }
+  #sidemenu { left: initial; }
+  #togglemenu { display: none; }
+}

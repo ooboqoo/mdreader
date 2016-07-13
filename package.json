@@ -1,0 +1,20 @@
+{
+  "name": "mdreader",
+  "version": "1.0.0",
+  "description": "This is a very simple markdown manual reader.",
+  "main": "index.html",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ooboqoo/mdreader.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ooboqoo/mdreader/issues"
+  },
+  "homepage": "https://github.com/ooboqoo/mdreader#readme",
+  "devDependencies": {
+  }
+}

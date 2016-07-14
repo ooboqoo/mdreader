@@ -18,7 +18,8 @@ table, th, td { border: none; }
 .responsive { overflow-x: auto; }
 
 /* definition of the main parts */
-main { width: 100%; position: relative; text-align: left; border: 0; }
+html, body { height: 100%; }
+main { position: relative; width: 100%; min-height: 100%; text-align: left; border: 0; }
 @media (min-width: 993px) {
   main { max-width: 980px; margin: auto; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important; }
 }
@@ -61,7 +62,7 @@ main table td:first-child a { text-decoration: none; color: #f33; }
 /* special definition for widescreen */
 @media (min-width: 1210px) {
   body { width: 1210px; position: relative; margin: auto; }
-  main { position: relative; left: 115px; }
+  main { left: 115px; }
   #sidemenu { left: initial; }
   #togglemenu { display: none; }
 }

@@ -7,7 +7,7 @@ a very simple markdown manual reader，microsoft windows only.
 
 ### 快速指引
 
-1. 下载项目文件压缩包 [mdreader v1.0](https://ooboqoo.github.io/mdreader/dist/mdreader1.0.zip)
+1. 下载项目文件压缩包 [mdreader v1.0](https://ooboqoo.github.io/mdreader/dist/mdreader1.0.zip) （只有74KB）
 2. 解压文档到您期望的位置
 3. 将 markdown 文档放置到 md 文件夹下
 4. 编辑 index.html 文件的目录部分，将您刚才的 markdown 文件信息添加进去

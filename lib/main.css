@@ -5,7 +5,7 @@ body { font-family: Verdana, Arial, SimSun, "Microsoft YaHei", sans-serif; line-
 h1 { font-size: 2rem; }
 h2 { font-size: 1.75rem; }
 h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem;  color: #33c; }
+h4 { font-size: 1.25rem; }
 h5 { font-size: 1rem; }
 h1, h2, h3, h4, h5 { margin: 0.5em 0; }
 h1, h2, h3, h4 { font-family: "Microsoft YaHei"; font-weight: normal; }
@@ -26,18 +26,18 @@ main { position: relative; width: 100%; min-height: 100%; text-align: left; bord
 main h1 { border-bottom: 2px solid #999; text-align: center; }
 main h2 { border-bottom: 1px solid #ccc; }
 main h2.collapse::after { content: "#点击展开#"; font-size: 1rem; position: absolute; right: 1rem; }
-main p { margin: 0.25em 0; }
+main p { margin: 0.5em 0; color: #333; }
 main p a { text-decoration: none; border-bottom: 1px solid gray; }
 main ul, main ol { margin: 0.25em 0 0 2em; padding: 0; }
 main blockquote { margin: 0.25em 0; padding: 0.25em 0.25em 0.25em 1em; border-left: 4px solid gray; }
 pre, code { font-family: Consolas, "Courier New", Courier, monospace; }
 pre { margin: 0.25em 0; padding: 0.25em 0.75em; border: 1px dotted #999; white-space: pre-wrap; }
-code { padding: 1px 0.25em; background-color: #eee; }
+code { padding: 1px 0.25em; background-color: #f3f6f6; color: #c33; border-radius: 0.25em; }
 main table { margin: 0.25em 0 0; border: 1px solid #999; empty-cells: show; }
 main table th { padding: 0.15em 0.5em; text-align: center; color: #fff; background-color: #666; }
 main table td { padding: 0.15em 0.5em; border-top: 1px solid #ccc; }
 main table td:first-child a { text-decoration: none; color: #f33; }
-#md {padding: 0.5em 1em;}
+#md {padding: 0.5em 1em 2em;}
 #md pre{ padding: 0; }
 
 /* definition of the sidemenu */

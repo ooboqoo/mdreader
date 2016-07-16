@@ -25,7 +25,7 @@ mdreader
 * marked - markdown 文档解析器
 * highlight.pack.js + vs.css - 对代码进行高亮显示，vs.css 是 highlight.js 项目下的一个 style 文件
 * normalize.css - 解决各浏览器差异的 css 插件
-* tiny.exe - 特地找的一个超级迷你的本地 web 服务器，Apache Node.js 之类的大块头都可以歇着了
+* tiny.exe - 特地找的一个超级迷你的本地 web 服务器，Apache 之类的大块头都可以歇着了
 
 备注：对每个组件都有独立 md 文档进行详细介绍，请查阅。（注：normalize 没有单独介绍。）
 
@@ -35,7 +35,7 @@ mdreader
 * main.js - 项目的 JavaScript 代码，您可以不用管它，除非您自己知道怎么改；
 * main.css - 项目的 css 文件，您觉得哪里看着不爽了，改它就是了
 * runServer.bat - 启动 TinyWeb 的批处理文件，除了双击它启动服务器，应该不会有其他事了。
-* md - 项目默认放 md 文档的文件夹，这个没关系，你可以自己随便建文档，关键是要在 index.html 里做相应修改
+* md - 项目默认放 md 文档的文件夹，这个没关系，你可以自己随便建文档，只要在 index.html 里指定正确地址就好。
 
 ## 如何使用本系统
 
@@ -49,10 +49,10 @@ mdreader
 示例：
 
 ```html
-<h2>Doc 文档</h2>
+<h2>项目说明文档</h2>
 <div>
-  <a href="/README.md">项目说明</a>
-  <a href="/md/manual.md">使用手册</a>
+  <a href="README.md">项目说明</a>
+  <a href="md/manual.md">使用手册</a>
   <!-- 在此处添加更多条目 -->
 </div>
 <h2>另外一个分类</h2>
@@ -68,7 +68,7 @@ mdreader
 浏览器中浏览时，每个大类都可以通过点击 h2 标题来“展开或折叠”本类目，文档刚打开时默认都是展开的，如果您希望在文档打开时该类目就是折叠的，那么需要给 `<h2>` 添加 `collapse` 类，然后在相应的 `<div>` 上添加样式 `style = "display:none;"` ，就像下面这样：
 
 ```html
-<h2 class="collpase">这个类默认只显示此类目，下面的条目会被隐藏</h2>
+<h2 class="collpase">这个类默认只显示此标题，下面的条目会被隐藏</h2>
 <div style = "display:none;">
   <a href="path/file.md">此处的条目默认会被隐藏</a>
   <!-- 在此处添加更多条目 -->
@@ -83,9 +83,19 @@ mdreader
 
 在宽屏显示器中，左侧菜单默认是显示的，且无法关闭。而在小屏幕中，或者缩小浏览器窗口时，左侧菜单会自动隐藏，可以通过左上方的按钮来开启或关闭菜单。
 
+### 作为笔记系统使用
+
+您可以自己创建 md 文件，然后边修改，边在浏览器查看效果。
+
+注意，您修改完保存后，需要刷新浏览器才能看到修改后的效果。正常刷新会用 `F5` 或刷新按钮，但这里推荐一个更好的方法，就是通过再次点击菜单中相应条目来刷新，这样页面会报留原先的滚动位置，不用重新翻页了。
+
+### 关闭本地服务器
+
+TinyWeb 服务器启动后会一直在后台运行，占用资源极少，基本不用去关闭它，如果您希望关闭服务器，请通过 `Ctrl + Shift + Delete`打开任务管理器，并找到 tiny.exe 并结束该进程。或者您可以通过在命令行输入命令关闭服务器：`taskkill /F /IM tiny.exe`
+
 ## 根据您的个人偏好来改造此系统
 
-如果不能高亮您 md 文档中的代码，请到 highlight.js 网站重新下载自定义解析包，然后替换掉 lib 目录下的 highlight.pack.js 文件。
+如果不能高亮您 md 文档中的代码，请到 highlight.js 官网重新下载自定义解析包，然后替换掉 lib 目录下的 highlight.pack.js 文件。
 
 如果您不喜欢代码高亮风格，请到 https://highlightjs.org/static/demo/ 挑选一个喜欢的风格，然后下载相应的 css 文档放到 lib 目录下，再然后修改 index.html 文档中的 `<link rel="stylesheet" href="./lib/vs.css">` 将 vs.css 修改为您新下载的 css文档名。
 
@@ -101,6 +111,6 @@ mdreader
 
 ### 在线笔记
 
-您可以将自己写的 md 笔记上传到 GitHub 网站做成在线笔记系统。
+您可以将自己写的 md 笔记上传到 GitHub 或者其他网站空间做成在线笔记系统。
 
-GitHub 网站提供了 git pages 服务，您可以将本项目文件直接上传到 GitHub 上，即可在线阅读笔记内容，具体操作步骤请查看 GitHub 说明，这里提醒下，如果不是放到 username.github.io 的话，是要将 branch 调为 gh-pages 才能正常访问的。
+GitHub 网站提供了静态站点服务，您可以将本项目文件直接上传到 GitHub 上，即可在线阅读笔记内容，具体操作步骤请查看 GitHub 说明，这里提醒下，如果不是放到 username.github.io 的话，是要将 branch 调为 gh-pages 才能正常访问的。

@@ -37,7 +37,7 @@ main table { margin: 0.25em 0 0; border: 1px solid #999; empty-cells: show; }
 main table th { padding: 0.15em 0.5em; text-align: center; color: #fff; background-color: #666; }
 main table td { padding: 0.15em 0.5em; border-top: 1px solid #ccc; }
 main table td:first-child a { text-decoration: none; color: #f33; }
-#md {padding: 0.5em 1em 2em;}
+#md { padding: 0.5em 1em 2em; }
 #md pre{ padding: 0; }
 
 /* definition of the sidemenu */
@@ -57,12 +57,30 @@ main table td:first-child a { text-decoration: none; color: #f33; }
 #sidemenu h2, #togglemenu:hover { cursor: pointer; }
 #sidemenu #togglemenu span:last-child { display: none; }
 #sidemenu.show #togglemenu span { display: none; }
-#sidemenu.show #togglemenu span:last-child { display: initial; }
+#sidemenu.show #togglemenu span:last-child { display: inline; }
+
+/* definition of the tools icon and relevant subject */
+#tools {position: fixed; top: 4px; right: 50px; opacity: 0.9; z-index: 999; }
+#tools > div { display: inline-block; margin: 0.25em; padding:0 0.25em; border: 1px solid #666666; border-radius: 0.25em; cursor: pointer; }
+#outline > div {display: none; position: absolute; left: -150px; width: 300px;
+    border: 1px solid #333; border-radius: 0.25em; background-color: #fff; overflow-x: hidden; }
+#outline:hover > div { display: block; }
+#outline a {display: block; text-decoration: none;}
+#outline a:hover {background-color: #999; color: #00f;}
+#outline .h1 {padding-left: 0.25em;}
+#outline .h2 {padding-left: 1em;}
+#outline .h3 {padding-left: 2em;}
+#outline .h4 {padding-left: 3em;}
+#outline .h5 {padding-left: 4em;}
+#outline .h6 {padding-left: 5em;}
+.mark, .mark * { font-style: normal; text-decoration: inherit; background-color: #ccf;  }
+p .mark {padding: 0.2em 0;}
 
 /* special definition for widescreen */
 @media (min-width: 1210px) {
   body { width: 1210px; position: relative; margin: auto; }
   main { left: 115px; }
-  #sidemenu { left: initial; }
+  #sidemenu { left: auto; }
   #togglemenu { display: none; }
+  #tools {right: calc(50% - 555px) }
 }

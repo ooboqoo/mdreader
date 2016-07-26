@@ -62,7 +62,7 @@ main table td:first-child a { text-decoration: none; color: #f33; }
 /* definition of the tools icon and relevant subject */
 #tools {position: fixed; top: 4px; right: 50px; opacity: 0.9; z-index: 999; }
 #tools > div { display: inline-block; margin: 0.25em; padding:0 0.25em; border: 1px solid #666666; border-radius: 0.25em; cursor: pointer; }
-#outline > div {display: none; position: absolute; left: -150px; width: 300px;
+#outline > div {display: none; position: absolute; left: -105px; width: 300px;
     border: 1px solid #333; border-radius: 0.25em; background-color: #fff; overflow-x: hidden; }
 #outline:hover > div { display: block; }
 #outline a {display: block; text-decoration: none;}

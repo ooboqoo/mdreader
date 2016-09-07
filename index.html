@@ -5,11 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/normalize.css">
-  <link rel="stylesheet" href="lib/main.css">
+  <link rel="stylesheet" href="lib/app.css">
   <link rel="stylesheet" href="lib/vs.css">
   <script src="lib/marked.js"></script>
   <script src="lib/highlight.pack.js"></script>
-  <script src="lib/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="lib/app.js"></script>
   <title>Markdown Reader</title>
 </head>
 
@@ -19,8 +20,9 @@
     <!-- 以下内容需手动填入 -->
     <h2>项目文档</h2>
     <div>
-      <a href="README.md">Readme 项目说明</a>
-      <a href="md/manual.md">Manual 使用手册</a>
+      <a href="README.md">项目说明</a>
+      <a href="md/manual.md">使用手册</a>
+      <a href="CHANGELIST.md">变更历史</a>
       <h3>组件说明</h3>
       <a href="md/marked.md">Markdown Compiler</a>
       <a href="md/highlight.md">Syntax Highlighter</a>
@@ -31,6 +33,7 @@
       <a href="path/file.md">description</a>
       <!-- 在此添加更多文档 -->
     </div>
+    <!-- 手动填入区域结束 -->
   </nav>
   <div id="tools"><div id="outline">索引</div><div id="mark">增/删标记</div></div>
   <main>

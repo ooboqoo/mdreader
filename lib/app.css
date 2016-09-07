@@ -1,0 +1,333 @@
+@charset "UTF-8";
+
+/* common definition */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Verdana, Arial, SimSun, "Microsoft YaHei", sans-serif;
+  line-height: 1.5;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Microsoft YaHei", serif;
+  font-weight: normal;
+}
+
+p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  color: #333;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: none;
+}
+
+pre, code {
+  font-family: Consolas, "Courier New", Courier, monospace;
+}
+
+pre {
+  padding: .25em .75em;
+  margin: .25em 0;
+  white-space: pre-wrap;
+  border: 1px dotted #999;
+}
+
+code {
+  padding: 1px .25em;
+  color: #c00;
+  background-color: #f3f6f6;
+  border-radius: .25em;
+}
+
+ul, ol {
+  padding: 0;
+  margin: .25em 0 0 2em;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: -5px;
+}
+
+blockquote {
+  padding-left: .5em;
+  margin: .25em 0;
+  border: 1px dotted #ccc;
+  border-left: 6px solid #ccc;
+}
+
+hr {
+  height: 0;
+  margin: 6px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/* definition of the main parts */
+html, body {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  text-align: left;
+  border: 0;
+}
+
+main h1 {
+  text-align: center;
+  border-bottom: 2px solid #999;
+}
+
+main h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+main h2::after {
+  position: absolute;
+  right: 1rem;
+  font-size: 1rem;
+  content: "#折叠#";
+}
+
+main h2.collapse::after {
+  content: "#展开#";
+}
+
+main a {
+  border-bottom: 1px solid #ccc;
+}
+
+main table {
+  display: block;
+  overflow-x: auto;
+  margin: .25em 0 0;
+  empty-cells: show;
+  border-collapse: collapse;
+}
+
+main table thead {
+  color: #fff;
+  text-align: center;
+  background-color: #666;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0 2px;
+}
+
+main table th, main table td {
+  padding: .15em .5em;
+  border: 1px solid #ccc;
+}
+
+main table td:first-child a {
+  color: #f33;
+}
+
+#md {
+  padding: .5em 1em 2em;
+}
+
+#md pre {
+  padding: 0;
+}
+
+#md pre > code {
+  display: block;
+  padding: .5em;
+  color: inherit;
+  background-color: #f3f3f6;
+}
+
+@media (min-width: 993px) {
+  main {
+    max-width: 980px;
+    margin: auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+/* definition of the sidemenu */
+#sidemenu {
+  position: fixed;
+  left: -230px;
+  z-index: 99;
+  width: 230px;
+  height: 100%;
+  background-color: #eee;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+#sidemenu h2, #sidemenu h3 {
+  font-family: "Microsoft YaHei", sans-serif;
+}
+
+#sidemenu h2 {
+  margin: 2px 6px;
+  font-size: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+#sidemenu h2::before {
+  position: absolute;
+  left: 12px;
+  font-weight: bold;
+  color: #fff;
+  content: "-";
+}
+
+#sidemenu h2.collapse::before {
+  content: "+";
+}
+
+#sidemenu h3 {
+  padding-left: .5em;
+  margin: 2px 0;
+  font-size: 1.125rem;
+  color: #000;
+}
+
+#sidemenu a {
+  display: block;
+  padding: 0 1em;
+  font-size: 1rem;
+  color: #555;
+  text-decoration: none;
+}
+
+#sidemenu a:hover {
+  background-color: #ccc;
+}
+
+#togglemenu {
+  position: absolute;
+  top: 1.5em;
+  left: 100%;
+  padding: .25em;
+  line-height: 1.25em;
+  color: #999;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 0 .25em .25em 0;
+}
+
+#togglemenu:hover {
+  color: #666;
+  background-color: #eee;
+}
+#togglemenu span:last-child {
+  display: none;
+}
+
+#sidemenu.show {
+  left: 0;
+}
+#sidemenu.show #togglemenu span {
+  display: none;
+}
+#sidemenu.show #togglemenu span:last-child {
+  display: inline;
+}
+
+/* definition of the tools icon and relevant subject */
+#tools {
+  position: fixed;
+  top: 8px;
+  right: 50px;
+  z-index: 999;
+  opacity: .9;
+}
+
+#tools > div {
+  display: inline-block;
+  padding: 0 .25em;
+  margin: .25em;
+  cursor: pointer;
+  border: 1px solid #666;
+  border-radius: .25em;
+}
+
+#outline > div {
+  position: absolute;
+  left: -115px;
+  display: none;
+  width: 300px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  background-color: #fff;
+  border: 1px solid #666;
+  border-radius: .25em;
+}
+
+#outline:hover > div {
+  display: block;
+}
+
+#outline .h1 { text-align: center; }
+#outline .h2 { padding-left: 1em;  }
+#outline .h3 { padding-left: 2em;  }
+#outline .h4 { padding-left: 3em;  }
+
+#outline a {
+  display: block;
+}
+
+#outline a:hover {
+  color: #fff;
+  background-color: #999;
+}
+
+.mark, .mark * {
+  font-style: normal;
+  text-decoration: inherit;
+  background-color: #ccf;
+}
+
+p > .mark {
+  padding: .2em 0;
+}
+
+/* special definition for widescreen */
+@media (min-width: 1210px) {
+  body {
+    position: relative;
+    width: 1210px;
+    margin: auto;
+  }
+  main { left: 115px; }
+  #sidemenu { left: auto; }
+  #togglemenu { display: none; }
+  #tools { right: calc(50% - 555px); }
+}
